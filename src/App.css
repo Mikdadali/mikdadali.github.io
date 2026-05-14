@@ -347,7 +347,7 @@ section#contact .section-inner {
 .nav.scrolled {
   background: rgba(10, 10, 15, 0.92);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid #e8c96a5c;
 }
 
 .nav-inner {
@@ -363,7 +363,8 @@ section#contact .section-inner {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px;    position: relative;
+    top: 4px;
 }
 
 .nav-logo-avatar {
@@ -443,7 +444,7 @@ section#contact .section-inner {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 100px 5vw 60px;
+  padding: 130px 5vw 60px;
   position: relative;
   z-index: 1;
 }
