@@ -240,7 +240,12 @@ export default function Portfolio() {
           <div className="nav-logo" onClick={() => scrollTo("about")}>
             <img src={logo} alt="MikdadAli Logo" className="nav-logo-image"/>
           </div>
-          <div className="nav-links">
+          <button className={`burger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             {NAV_LINKS.map(l => (
               <span
                 key={l}
