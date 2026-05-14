@@ -366,7 +366,7 @@ section#contact .section-inner {
   display: flex;
   align-items: center;
   gap: 10px;    position: relative;
-    top: 4px;
+    top: 2.5px;
 }
 
 .nav-logo-avatar {
@@ -466,7 +466,7 @@ section#contact .section-inner {
 
 .hero-content {
   flex: 1;
-  max-width: 580px;
+  max-width: 580px; text-align: left;
 }
 
 .hero-badge {
@@ -525,7 +525,7 @@ section#contact .section-inner {
 .hero-cta {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn-outline {
