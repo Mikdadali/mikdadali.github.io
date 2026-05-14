@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
-import logo from "../assets/logo.png";
+import logo from "./assets/logo.png";
 
 const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"];
 
