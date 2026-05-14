@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
+import logo from "../assets/logo.png";
 
 const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"];
 
@@ -237,8 +238,7 @@ export default function Portfolio() {
       <nav className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-inner">
           <div className="nav-logo" onClick={() => scrollTo("about")}>
-            <div className="nav-logo-avatar">MA</div>
-            <span className="nav-logo-name">Mikdad Ali</span>
+            <img src={logo} alt="MikdadAli Logo" className="nav-logo-image"/>
           </div>
           <div className="nav-links">
             {NAV_LINKS.map(l => (
