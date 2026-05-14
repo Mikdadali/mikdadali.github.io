@@ -239,7 +239,9 @@
   letter-spacing: -0.02em;
   color: #e8e6df;
 }
-
+h3.section-title {
+    font-size: clamp(22px, 5vw, 36px); padding-bottom: 20px;
+}
 /* ── Animations ── */
 .floating {
   animation: float 5s ease-in-out infinite;
@@ -351,7 +353,7 @@ section#contact .section-inner {
 }
 
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1067,8 +1069,8 @@ section#contact .section-inner {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  background: rgba(232, 201, 106, 0.04);
-  border: 1px solid rgba(232, 201, 106, 0.2);
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 36px 40px;
   flex-wrap: wrap;
@@ -1212,6 +1214,16 @@ section#contact .section-inner {
 
 /* MOBILE NAV */
 
+@media (min-width: 960px) {
+  .burger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+}
+
 @media (max-width: 959.98px) {
 
   .burger {
@@ -1262,5 +1274,183 @@ section#contact .section-inner {
     width: 100%;
     max-width: 220px;
     text-align: center;
+  }
+}
+
+/* SERVICES */
+.services-section {
+  padding: 10px 5vw 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232, 201, 106, 0.25);
+}
+
+.service-icon {
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.service-title {
+  font-size: 20px;
+  color: #e8e6df;
+  margin-bottom: 12px;
+}
+
+.service-desc {
+  color: #7a7872;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* ACHIEVEMENTS */
+.achievements-section {
+  padding: 10px 5vw 80px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.achievement-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.achievement-number {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  color: #e8c96a;
+  font-weight: 900;
+}
+
+.achievement-label {
+  margin-top: 16px;
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  padding: 10px 5vw 80px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 30px;
+  height: 100%;
+}
+
+.testimonial-text {
+  color: #9e9c96;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.testimonial-author h4 {
+  color: #e8e6df;
+  margin-bottom: 4px;
+}
+
+.testimonial-author span {
+  color: #e8c96a;
+  font-size: 13px;
+}
+/* LEARNING */
+.learning-section {
+  padding: 70px 5vw 70px;
+}
+
+.learning-card {
+    border: 1px solid rgba(232, 201, 106, 0.18);
+    border-radius: 20px;
+    padding: 36px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+}
+.learning-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero-main-tagline {
+  font-size: 18px;
+  color: #e8c96a;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 959.98px) {
+  .services-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .services-section,
+  .achievements-section,
+  .testimonials-section {
+    padding: 50px 5vw;
+  }
+
+  .services-grid,
+  .testimonial-grid,
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main-tagline {
+    font-size: 16px;
+  }
+
+  .service-card,
+  .testimonial-card,
+  .achievement-card {
+    padding: 24px;
+  }
+
+  .achievement-number {
+    font-size: 40px;
   }
 }

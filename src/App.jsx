@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import logo from "./assets/logo.png";
 
-const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"];
+const NAV_LINKS = ["About", "Skills", "Services", "Projects", "Experience", "Testimonials", "Contact"];
 
 const SKILLS = [
   { category: "Core",           items: ["HTML5 / CSS3", "JavaScript (ES6+)", "jQuery", "SASS / LESS", "Bootstrap"] },
@@ -62,6 +62,30 @@ const PROJECTS = [
     year: "2020",
     color: "#16213e",
   },
+  {
+  title: "1440",
+  url: "https://www.1440.org/",
+  desc: "Developed a responsive and accessible wellness platform with CMS integration and optimized frontend architecture.",
+  tags: ["UIKit", "Responsive", "CMS", "Accessibility"],
+  year: "2020",
+  color: "#0f3460",
+},
+{
+  title: "Magento eCommerce Projects",
+  url: "",
+  desc: "Built multiple eCommerce storefronts using Magento 1.9 with responsive UI and optimized frontend performance.",
+  tags: ["Magento", "eCommerce", "Responsive"],
+  year: "2018",
+  color: "#16213e",
+},
+{
+  title: "WordPress Enterprise Websites",
+  url: "",
+  desc: "Developed dynamic enterprise websites using WordPress CMS with custom frontend implementations.",
+  tags: ["WordPress", "CMS", "Responsive"],
+  year: "2025",
+  color: "#1a1a2e",
+},
 ];
 
 const EXPERIENCE = [
@@ -100,6 +124,59 @@ const EXPERIENCE = [
       "Integrated third-party APIs and payment gateways",
     ],
   },
+];
+
+const SERVICES = [
+  {
+    title: "ADA / WCAG Compliance",
+    desc: "Building accessible enterprise-grade websites following WCAG accessibility standards.",
+    icon: "♿",
+  },
+  {
+    title: "AMP & PWA Development",
+    desc: "Creating ultra-fast AMP pages and Progressive Web Apps optimized for performance.",
+    icon: "⚡",
+  },
+  {
+    title: "WordPress & CMS",
+    desc: "Custom WordPress development, CMS integration, WooCommerce and scalable frontend systems.",
+    icon: "🧩",
+  },
+  {
+    title: "Performance Optimization",
+    desc: "Improving Lighthouse scores, Core Web Vitals and overall frontend performance.",
+    icon: "🚀",
+  },
+  {
+    title: "Team Leadership",
+    desc: "Leading frontend teams, mentoring developers and managing enterprise-scale delivery.",
+    icon: "👨‍💼",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    name: "Project Management Team",
+    company: "Milestone Inc.",
+    text: "Mikdad consistently delivered high-quality frontend solutions with strong attention to accessibility, responsiveness, and performance optimization.",
+  },
+  {
+    name: "Set up professional EBAY store & listing",
+    company: "Springvale Home Decor",
+    text: "Have been very impressed by Mikdadali's quality of work, and the quick timeframe that he has been able to complete it in. Highly recommend!! A+++",
+  },
+  {
+    name: "Upwork Client",
+    company: "Ebay Store Owner",
+    text: "Very Reliable Freelancer Gets Back To you in a Timely manner, Very Polite, and the work was great...highly recommended",
+  },
+];
+
+const CURRENTLY_LEARNING = [
+  "Next.js",
+  "Advanced React Patterns",
+  "AI-assisted Frontend Workflows",
+  "Advanced Accessibility",
 ];
 
 const EDUCATION = [
@@ -279,6 +356,9 @@ export default function Portfolio() {
                   Mikdad Ali <br />
                   <span className="gold">Momin</span>
                 </h1>
+                <p className="hero-main-tagline">
+  Building Accessible, High-Performance Web Experiences for Global Brands
+</p>
               </AnimatedSection>
 
               <AnimatedSection delay={200}>
@@ -381,6 +461,30 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* ── SERVICES ── */}
+      <section id="services" className="services-section">
+  <div className="section-inner">
+    <AnimatedSection>
+      <p className="section-label">What I Offer</p>
+      <h2 className="section-title" style={{ marginBottom: 56 }}>
+        My <span className="gold">Services</span>
+      </h2>
+    </AnimatedSection>
+
+    <div className="services-grid">
+      {SERVICES.map((service, i) => (
+        <AnimatedSection key={service.title} delay={i * 80}>
+          <div className="service-card">
+            <div className="service-icon">{service.icon}</div>
+            <h3 className="service-title">{service.title}</h3>
+            <p className="service-desc">{service.desc}</p>
+          </div>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* ── PROJECTS ── */}
       <section id="projects" className="projects-section">
         <div className="section-inner">
@@ -474,7 +578,7 @@ export default function Portfolio() {
         <div className="cv-card-left">
           <div className="cv-icon">📄</div>
           <div>
-            <h2 class="section-title">My <span class="gold">Resume / CV</span></h2>
+            <h2 className="section-title">My <span class="gold">Resume / CV</span></h2>
             <p className="cv-subtitle">Sr. Frontend Developer · 10+ Years Experience · Ahmedabad, India</p>
             <div className="cv-tags">
               {["HTML5", "CSS3", "JavaScript", "React", "AMP", "PWA", "WordPress", "ADA/WCAG"].map(t => (
@@ -492,6 +596,32 @@ export default function Portfolio() {
         </a>
       </div>
     </AnimatedSection>
+  </div>
+</section>
+
+{/* ── Testimonials ── */}
+<section id="testimonials" className="testimonials-section">
+  <div className="section-inner">
+    <AnimatedSection>
+      <p className="section-label">What People Say</p>
+      <h2 className="section-title" style={{ marginBottom: 56 }}>
+        Client <span className="gold">Testimonials</span>
+      </h2>
+    </AnimatedSection>
+
+    <div className="testimonial-grid">
+      {TESTIMONIALS.map((item, i) => (
+        <AnimatedSection key={item.name} delay={i * 80}>
+          <div className="testimonial-card">
+            <p className="testimonial-text">“{item.text}”</p>
+            <div className="testimonial-author">
+              <h4>{item.name}</h4>
+              <span>{item.company}</span>
+            </div>
+          </div>
+        </AnimatedSection>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -573,6 +703,26 @@ export default function Portfolio() {
           </AnimatedSection>
         </div>
       </section>
+
+{/* ── Learning Section ── */}
+<section className="learning-section">
+  <div className="section-inner">
+    <AnimatedSection>
+      <div className="learning-card">
+        <h3 className="section-title">Currently <span className="gold">Exploring</span></h3>
+
+        <div className="learning-tags">
+          {CURRENTLY_LEARNING.map((item) => (
+            <span key={item} className="skill-pill">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
+
 
       {/* ── FOOTER ── */}
       <footer className="footer">
