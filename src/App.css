@@ -553,13 +553,14 @@ section#contact .section-inner {
   background: transparent;
   border: 1px solid rgba(232, 201, 106, 0.35);
   color: #e8c96a;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 15px;
   border-radius: 10px;
   padding: 13px 28px;
   cursor: pointer;
   letter-spacing: 0.04em;
   transition: all 0.25s;
+      font-family: DM Sans, Segoe UI, sans-serif;
 }
 
 .btn-outline:hover {
@@ -1027,7 +1028,7 @@ section#contact .section-inner {
   border-radius: 10px;
   padding: 14px 36px;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.25s;    font-family: DM Sans, Segoe UI, sans-serif;
 }
 
 .send-btn:hover {
@@ -1143,6 +1144,7 @@ section#contact .section-inner {
   transition: all 0.25s;
   white-space: nowrap;
   flex-shrink: 0;
+  font-family: DM Sans, Segoe UI, sans-serif;
 }
 
 .cv-download-btn:hover {
