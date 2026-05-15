@@ -265,6 +265,8 @@ export default function Portfolio() {
   const [scrolled, setScrolled]   = useState(false);
   const [form, setForm]           = useState({ name: "", email: "", message: "" });
   const [sent, setSent]           = useState(false);
+  const [weather, setWeather] = useState(null);
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -272,6 +274,32 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+  async function fetchWeather() {
+    try {
+      const API_KEY = "YOUR_API_KEY";
+
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=Ahmedabad&appid=${b4f81d5d77787bc284153ff9327b1a8a}&units=metric`
+      );
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (data.main) {
+        setWeather({
+          temp: Math.round(data.main.temp),
+          condition: data.weather[0].main,
+        });
+      }
+    } catch (error) {
+      console.error("Weather error:", error);
+    }
+  }
+
+  fetchWeather();
+}, []);
   const scrollTo = (id) => {
     const el = document.getElementById(id.toLowerCase());
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -353,7 +381,7 @@ export default function Portfolio() {
 
               <AnimatedSection delay={100}>
                 <h1 className="hero-title">
-                  Mikdad Ali <br />
+                  Mikdadali <br />
                   <span className="gold">Momin</span>
                 </h1>
                 <p className="hero-main-tagline">
@@ -378,7 +406,11 @@ export default function Portfolio() {
 
               <AnimatedSection delay={300}>
                 <p className="hero-description">
-                  Based in <span className="hero-highlight">Sarkhej, Ahmedabad</span> — Frontend Developer with 10+ years of experience building accessible, high-performance, and visually engaging web experiences for Hospitality, Automotive, and Finance sectors. Passionate about AMP, PWA, ADA compliance, and delivering pixel-perfect responsive interfaces.
+                  Based in <span className="hero-highlight">Sarkhej, Ahmedabad</span> {weather && (
+  <div className="weather-badge">
+    📍 Ahmedabad • {weather.temp}°C • {weather.condition}
+  </div>
+)} — Frontend Developer with 10+ years of experience building accessible, high-performance, and visually engaging web experiences for Hospitality, Automotive, and Finance sectors. Passionate about AMP, PWA, ADA compliance, and delivering pixel-perfect responsive interfaces.
                 </p>
               </AnimatedSection>
 
@@ -726,7 +758,7 @@ export default function Portfolio() {
 
       {/* ── FOOTER ── */}
       <footer className="footer">
-        <p className="footer-copy">© {new Date().getFullYear()} Mikdad Ali Momin · Sr. Frontend Developer</p>
+        <p className="footer-copy">© {new Date().getFullYear()} Mikdadali Momin · Sr. Frontend Developer</p>
         <div className="footer-links">
           <a href="https://www.linkedin.com/in/mikdadali" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
           <a href="https://github.com/mikdadali" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>

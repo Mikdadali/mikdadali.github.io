@@ -528,6 +528,27 @@ section#contact .section-inner {
   flex-wrap: wrap;
 }
 
+.weather-badge{
+  margin-top:16px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  font-size:14px;
+  color:#e8c96a;
+}
+
+.cv-download-count{
+  margin-top:12px;
+  font-size:14px;
+  opacity:.7;
+  color:#fff;
+}
+
 .btn-outline {
   background: transparent;
   border: 1px solid rgba(232, 201, 106, 0.35);
@@ -1055,6 +1076,7 @@ section#contact .section-inner {
   .proj-grid        { grid-template-columns: 1fr; }
   .edu-grid         { grid-template-columns: 1fr; }
   .contact-form-row { grid-template-columns: 1fr; }
+  .footer           {justify-content: center;}
 }
 
 /* ── CV DOWNLOAD ── */
