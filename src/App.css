@@ -369,11 +369,6 @@ section#contact .section-inner {
   height: 64px;
 }
 
-/* adding padding to make scrolling functionality works properly */
-section[id] {
-  scroll-margin-top: 84px;
-}
-
 .nav-logo {
   cursor: pointer;
   display: flex;
