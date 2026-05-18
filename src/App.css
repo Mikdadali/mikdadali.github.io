@@ -369,6 +369,11 @@ section#contact .section-inner {
   height: 64px;
 }
 
+/* adding padding to make scrolling functionality works properly */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
 .nav-logo {
   cursor: pointer;
   display: flex;
@@ -1311,7 +1316,7 @@ section#contact .section-inner {
 
 /* SERVICES */
 .services-section {
-  padding: 10px 5vw 80px;
+  padding: 80px 5vw 80px;
   position: relative;
   z-index: 1;
 }
@@ -1386,7 +1391,7 @@ section#contact .section-inner {
 
 /* TESTIMONIALS */
 .testimonials-section {
-  padding: 10px 5vw 80px;
+  padding: 80px 5vw 80px;
 }
 
 .testimonial-grid {
