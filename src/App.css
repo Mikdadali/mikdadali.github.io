@@ -320,6 +320,14 @@ h3.section-title {
 section#contact .section-inner {
     max-width: 880px;
 }
+
+/* make experience section full width */
+.experience-section .section-inner {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+}
+
 /* ── Animations ── */
 .floating {
   animation: float 5s ease-in-out infinite;
@@ -827,7 +835,7 @@ section#contact .section-inner {
   z-index: 1;
 }
 
-.exp-list { max-width: 720px; }
+.exp-list { max-width: 100%; }
 
 .exp-card {
   border-left: 2px solid rgba(232, 201, 106, 0.3);
