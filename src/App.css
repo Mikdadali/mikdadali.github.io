@@ -323,9 +323,9 @@ section#contact .section-inner {
 
 /* make experience section full width */
 .experience-section .section-inner {
-  max-width: 100%;
+  max-width: 1090px;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* ── Animations ── */
