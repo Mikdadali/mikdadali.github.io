@@ -321,13 +321,6 @@ section#contact .section-inner {
     max-width: 880px;
 }
 
-/* make experience section full width */
-.experience-section .section-inner {
-  max-width: 1090px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 /* ── Animations ── */
 .floating {
   animation: float 5s ease-in-out infinite;
