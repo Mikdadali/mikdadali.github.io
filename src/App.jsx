@@ -23,11 +23,11 @@ const PROJECTS = [
     color: "#0f3460",
   },
   {
-    title: "TiEcon",
-    url: "https://www.tiecon.org/",
-    desc: "Developed a fully responsive website for one of the world's largest entrepreneurship conferences using UIKit and CMS.",
+    title: "Air Academy Credit Union",
+    url: "https://www.aacu.com/",
+    desc: "Developed and enhanced a responsive credit union website using UIkit and Milestone CMS.",
     tags: ["UIKit", "Responsive", "CMS", "Full Project"],
-    year: "2022",
+    year: "2026",
     color: "#1a1a2e",
   },
   {
