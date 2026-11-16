@@ -59,6 +59,20 @@ export const PROJECTS = [
     tags: ["Healthcare", "Responsive", "Booking Form", "ADA"],
   },
   {
+    year: "2025",
+    title: "Destination Weddings",
+    url: "https://www.destinationweddings.com/",
+    text: "Responsive website for a destination wedding planning service: resort and destination browsing, planning guides, real wedding galleries, exclusive offers, a guest wedding finder, and a free quote request form.",
+    tags: ["Wedding Planning", "Responsive", "Lead Forms", "CMS"],
+  },
+  {
+    year: "2025",
+    title: "1440",
+    url: "https://www.1440.org/",
+    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
+    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
+  },
+  {
     year: "2023",
     title: "Old Point Bank",
     url: "https://www.oldpoint.com/",
@@ -72,20 +86,6 @@ export const PROJECTS = [
     text: "Built a responsive automotive dealership website with full CMS integration and custom inventory management functionality.",
     tags: ["UIKit", "Responsive", "CMS", "Inventory"],
   },
-  {
-    year: "2025",
-    title: "Destination Weddings",
-    url: "https://www.destinationweddings.com/",
-    text: "Responsive website for a destination wedding planning service: resort and destination browsing, planning guides, real wedding galleries, exclusive offers, a guest wedding finder, and a free quote request form.",
-    tags: ["Wedding Planning", "Responsive", "Lead Forms", "CMS"],
-  },
-  {
-    year: "2025",
-    title: "1440",
-    url: "https://www.1440.org/",
-    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
-    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
-  }
 ];
 
 export const EXPERIENCE = [
