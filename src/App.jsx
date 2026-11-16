@@ -3,7 +3,7 @@ import {
   motion, AnimatePresence, useScroll, useSpring, useTransform,
   useInView, useReducedMotion, animate,
 } from "framer-motion";
-import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME, CLIENTS, SERVICES, EDUCATION } from "./data.js";
+import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME, CLIENTS, SERVICES, EDUCATION, CLIENT_SITES } from "./data.js";
 import { SOCIALS } from "./config.js";
 import ContactForm from "./ContactForm.jsx";
 
@@ -344,36 +344,110 @@ function Projects() {
   );
 }
 
-/* ---------- Experience: line draws as you scroll ---------- */
+/* ---------- Experience: pick a role, read the details ---------- */
 function Experience() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 70%", "end 60%"] });
-  const h = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const [i, setI] = useState(0);
+  const job = EXPERIENCE[i];
+  const onKey = (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); setI((v) => (v + 1) % EXPERIENCE.length); }
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); setI((v) => (v - 1 + EXPERIENCE.length) % EXPERIENCE.length); }
+  };
   return (
     <section id="experience" className="section tint">
       <div className="wrap">
         <Reveal><h2>Work experience</h2></Reveal>
-        <div className="timeline" ref={ref}>
-          <div className="rail" aria-hidden="true"><motion.div className="rail-fill" style={{ height: h }} /></div>
-          {EXPERIENCE.map((x) => (
-            <Reveal key={x.role + x.company} className="job">
-              <span className="job-dot" aria-hidden="true" />
-              <h3>{x.role}</h3>
-              <p className="job-meta">{x.company} · {x.period}</p>
-              <ul>{x.points.map((p) => <li key={p}>{p}</li>)}</ul>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="edu">
-          <h3>Education</h3>
-          <p>{EDUCATION}</p>
+        <Reveal className="exp">
+          <div className="exp-tabs" role="tablist" aria-label="Roles" aria-orientation="vertical" onKeyDown={onKey}>
+            {EXPERIENCE.map((x, k) => (
+              <button key={x.company} role="tab" id={`job-tab-${k}`} aria-selected={i === k} aria-controls="job-panel"
+                tabIndex={i === k ? 0 : -1} className={`exp-tab ${i === k ? "on" : ""}`} onClick={() => setI(k)}>
+                {i === k && <motion.span layoutId="exp-bg" className="exp-bg" transition={{ type: "spring", stiffness: 380, damping: 34 }} />}
+                <span className="exp-tab-in">
+                  <span className="exp-period">{x.period}</span>
+                  <span className="exp-company">{x.company}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+          <div id="job-panel" role="tabpanel" aria-labelledby={`job-tab-${i}`} className="exp-panel">
+            <AnimatePresence mode="wait">
+              <motion.div key={i} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.28, ease: [0.2, 0.8, 0.2, 1] }}>
+                <h3>{job.role}</h3>
+                <p className="job-meta">{job.company}, {job.place} · {job.period}</p>
+                <ul className="exp-points">
+                  {job.points.map((p, k) => (
+                    <motion.li key={p} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + k * 0.06 }}>{p}</motion.li>
+                  ))}
+                </ul>
+                <ul className="tags">
+                  {job.stack.map((t, k) => (
+                    <motion.li key={t} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 + k * 0.04 }}>{t}</motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </Reveal>
+
+        <Reveal className="edu-block">
+          <h3>Education</h3>
+          <ul className="edu-grid">
+            {EDUCATION.map((e) => (
+              <li key={e.degree}>
+                <span className="edu-year">{e.year}</span>
+                <strong>{e.degree}</strong>
+                <span>{e.school}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
         <Reveal className="quote">
           <blockquote>
             <p>“{TESTIMONIAL.quote}”</p>
             <footer>{TESTIMONIAL.who}</footer>
           </blockquote>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- More client websites, filterable by sector ---------- */
+function ClientSites() {
+  const sectors = ["All", ...Array.from(new Set(CLIENT_SITES.map((s) => s.sector)))];
+  const [f, setF] = useState("All");
+  const list = f === "All" ? CLIENT_SITES : CLIENT_SITES.filter((s) => s.sector === f);
+  return (
+    <section id="sites" className="section sites">
+      <div className="wrap">
+        <Reveal><h2>More websites I've built</h2></Reveal>
+        <div className="tabs" role="group" aria-label="Filter by sector">
+          {sectors.map((s) => (
+            <button key={s} aria-pressed={f === s} className={f === s ? "on" : ""} onClick={() => setF(s)}>
+              {f === s && <motion.span layoutId="sector-bg" className="tab-bg" transition={{ type: "spring", stiffness: 420, damping: 34 }} />}
+              <span>{s}</span>
+            </button>
+          ))}
+        </div>
+        <p className="sites-count" aria-live="polite">{list.length} {list.length === 1 ? "site" : "sites"}</p>
+        <motion.ul className="sites-grid" layout>
+          <AnimatePresence mode="popLayout">
+            {list.map((s) => (
+              <motion.li key={s.url} layout initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.92 }} transition={{ duration: 0.28 }}>
+                <a href={s.url} target="_blank" rel="noreferrer">
+                  <span className="site-sector">{s.sector}</span>
+                  <span className="site-name">{s.name}</span>
+                  <span className="site-host">{new URL(s.url).hostname.replace("www.", "")}</span>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                  <svg className="site-arrow" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </motion.li>
+            ))}
+          </AnimatePresence>
+        </motion.ul>
       </div>
     </section>
   );
@@ -442,6 +516,7 @@ export default function App() {
         <Services />
         <Skills />
         <Projects />
+        <ClientSites />
         <Experience />
         <Resume />
         <Contact />

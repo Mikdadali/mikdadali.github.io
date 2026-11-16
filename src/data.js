@@ -57,33 +57,71 @@ export const PROJECTS = [
   },
   {
     year: "",
-    title: "Luxury Resort Website",
-    text: "Developed a luxury resort website with booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
-    tags: ["Booking Engine", "eCommerce", "Blog", "CMS"],
+    title: "TiEcon",
+    url: "https://www.tiecon.org/",
+    text: "Website handled end to end, built with UIKit and a CMS, fully responsive.",
+    tags: ["UIKit", "Responsive", "CMS", "Full Project"],
+  },
+  {
+    year: "",
+    title: "1440",
+    url: "https://www.1440.org/",
+    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
+    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
+  },
+  {
+    year: "",
+    title: "Velas Resort",
+    url: "https://www.velasresorts.com.mx/",
+    text: "Responsive resort website with a booking engine, managed through a CMS.",
+    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
+  },
+  {
+    year: "",
+    title: "Lonnie's Reno Club",
+    url: "https://www.lonniesrenoclub.com/",
+    text: "Responsive website with a booking engine, managed through a CMS.",
+    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
   },
 ];
 
 export const EXPERIENCE = [
   {
     role: "Sr. Frontend Developer Level 2",
-    company: "Milestone Inc., Ahmedabad",
+    company: "Milestone Inc.",
+    place: "Ahmedabad",
     period: "2018 – Present",
     points: [
-      "Developing fully functional websites for hospitality, automotive, and finance using the latest frontend technologies",
+      "Developing fully functional websites for hospitality, automotive, finance, and healthcare using the latest frontend technologies",
       "Building Google AMP pages and ADA compliant websites with fully responsive layouts",
       "Leading a frontend team of 5 developers on enterprise-scale web projects",
       "Architecting accessible, AMP-optimized, and PWA-ready web experiences",
       "Implementing ADA/WCAG 2.1 compliance across all client deliverables",
       "Mentoring junior developers and running weekly code reviews",
     ],
+    stack: ["HTML5", "CSS3", "JavaScript", "React.js", "UIKit", "WordPress", "Google AMP", "PWA", "ADA / WCAG"],
   },
   {
     role: "Frontend Developer",
-    company: "Hrimtech Solutions",
-    period: "Earlier role",
+    company: "Ebusinessesguru (Hrimtech Solutions)",
+    place: "Ahmedabad",
+    period: "2017 – 2018",
     points: [
-      "Built responsive interfaces with HTML5, CSS3, Bootstrap, jQuery and JavaScript",
+      "Built an eCommerce store using Magento 1.9 and dynamic websites using WordPress",
+      "Handled client communication and built eBay templates and storefronts",
     ],
+    stack: ["Magento 1.9", "WordPress", "eBay templates", "eCommerce"],
+  },
+  {
+    role: "Frontend Developer",
+    company: "Softshil Infotech",
+    place: "Anand",
+    period: "2015 – 2017",
+    points: [
+      "Created designs in Adobe Photoshop and converted them into fully functional websites",
+      "Worked on ASP.NET MVC and built an eCommerce store using nopCommerce",
+    ],
+    stack: ["Adobe Photoshop", "ASP.NET MVC", "nopCommerce", "HTML / CSS"],
   },
 ];
 
@@ -129,4 +167,28 @@ export const SERVICES = [
   },
 ];
 
-export const EDUCATION = "Veer Narmad South Gujarat University";
+export const EDUCATION = [
+  { degree: "BE in Information Technology", school: "SVMIT, Bharuch", year: "2011" },
+  { degree: "HSC", school: "D.N. High School, Anand", year: "2007" },
+  { degree: "SSC", school: "St. Xavier's High School, Anand", year: "2005" },
+];
+
+// Sector comes from what each site is. Edit, add or remove freely.
+export const CLIENT_SITES = [
+  { name: "Mariner Finance", url: "https://www.marinerfinance.com/", sector: "Finance" },
+  { name: "One Nevada Credit Union", url: "https://www.onenevada.org/", sector: "Finance" },
+  { name: "The Hollywood Roosevelt", url: "https://www.thehollywoodroosevelt.com/", sector: "Hospitality" },
+  { name: "The Wauwinet", url: "https://www.wauwinet.com/", sector: "Hospitality" },
+  { name: "YMCA of the Rockies", url: "https://www.ymcarockies.org/", sector: "Hospitality" },
+  { name: "Kaana Belize", url: "https://www.kaanabelize.com/", sector: "Hospitality" },
+  { name: "Itz'ana Belize", url: "https://www.itzanabelize.com/", sector: "Hospitality" },
+  { name: "The Grande Colonial", url: "https://www.thegrandecolonial.com/", sector: "Hospitality" },
+  { name: "Hotel Andaluz", url: "https://www.hotelandaluz.com/", sector: "Hospitality" },
+  { name: "Great Escapes RV Resorts", url: "https://www.greatescapesrvresorts.com/", sector: "Hospitality" },
+  { name: "Honda Tollocan", url: "https://hondatollocan.mx/", sector: "Automotive" },
+  { name: "Mitsubishi Coapa", url: "https://www.mitsubishi-coapa.mx/", sector: "Automotive" },
+  { name: "BYD Vallejo", url: "https://www.bydvallejo.com.mx/", sector: "Automotive" },
+  { name: "The Ferguson Clinic", url: "https://www.thefergusonclinic.com/", sector: "Healthcare" },
+  { name: "Window Nation", url: "https://www.windownation.com/", sector: "Home services" },
+  { name: "Aramark", url: "https://www.aramark.com/", sector: "Enterprise" },
+];
