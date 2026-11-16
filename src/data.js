@@ -1,6 +1,6 @@
 export const PROFILE = {
   name: "Mikdadali Momin",
-  role: "Sr. Frontend Developer",
+  role: "Sr. Frontend Developer Level 2",
   headline: "Building accessible, high-performance web experiences for global brands",
   intro:
     "Based in Sarkhej, Ahmedabad. Frontend developer with 10+ years building accessible, high-performance, and visually engaging web experiences for hospitality, automotive, and finance. Passionate about AMP, PWA, ADA compliance, and pixel-perfect responsive interfaces.",
@@ -65,7 +65,7 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    role: "Sr. Frontend Developer",
+    role: "Sr. Frontend Developer Level 2",
     company: "Milestone Inc., Ahmedabad",
     period: "2018 – Present",
     points: [

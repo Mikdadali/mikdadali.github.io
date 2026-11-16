@@ -410,6 +410,14 @@ function Contact() {
         <Reveal>
           <h2>Let's build something that works for everyone</h2>
           <p className="lead">Tell me what you're working on. I'll reply with next steps.</p>
+          <p className="contact-more">
+            I'm a Sr. Frontend Developer Level 2 with 10+ years of experience building accessible, fast websites for
+            hospitality, automotive, finance, and healthcare brands. Whether you need a new site, an ADA/WCAG
+            accessibility review, an AMP or PWA build, or an experienced hand to lead your frontend team, I'd like to hear about it.
+          </p>
+          <p className="contact-more">
+            To get a useful reply quickly, include what you're building, your timeline, and a link to your current site if you have one.
+          </p>
           <p className="where">Ahmedabad, India</p>
           <p className="links">
             <a href={SOCIALS.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
