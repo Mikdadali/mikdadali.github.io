@@ -32,17 +32,17 @@ export const PROJECTS = [
   },
   {
     year: "2026",
-    title: "Velas Resort",
-    url: "https://www.velasresorts.com.mx/",
-    text: "Responsive resort website with a booking engine, managed through a CMS.",
-    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
-  },
-    {
-    year: "2026",
     title: "Window Nation",
     url: "https://www.windownation.com/",
     text: "Responsive home improvement website for a replacement windows and doors company: product pages, free estimate and consultation forms, financing and offers, a service-area locator, and a knowledge center, managed through a CMS.",
     tags: ["Home Services", "Responsive", "Lead Forms", "CMS"],
+  },
+  {
+    year: "2026",
+    title: "Grupo Autosur",
+    url: "https://www.autosur.mx/",
+    text: "Responsive website for a Mexican automotive dealership group: new and pre-owned vehicle inventory by brand and body type, quote and financing tools, test-drive and service appointment booking, promotions, and a dealership locator, managed through a CMS.",
+    tags: ["Automotive", "Responsive", "Inventory", "Booking Forms", "CMS"],
   },
   {
     year: "2025",
@@ -52,32 +52,11 @@ export const PROJECTS = [
     tags: ["Healthcare", "Responsive", "Booking Form", "ADA"],
   },
   {
-    year: "2024",
-    title: "1440",
-    url: "https://www.1440.org/",
-    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
-    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
-  },
-  {
-    year: "2024",
+    year: "2023",
     title: "Old Point Bank",
-    url: "https://www.oldpointbank.com/",
+    url: "https://www.oldpoint.com/",
     text: "Full project handling from start to end. Built a fully responsive banking website using UIKit and CMS with a focus on performance and accessibility.",
     tags: ["UIKit", "Responsive", "CMS", "Full Project"],
-  },
-  {
-    year: "2024",
-    title: "Destination Weddings",
-    url: "https://www.destinationweddings.com/",
-    text: "Responsive website for a destination wedding planning service: resort and destination browsing, planning guides, real wedding galleries, exclusive offers, a guest wedding finder, and a free quote request form.",
-    tags: ["Wedding Planning", "Responsive", "Lead Forms", "CMS"],
-  },
-  {
-    year: "2023",
-    title: "Grupo Autosur",
-    url: "https://www.autosur.mx/",
-    text: "Responsive website for a Mexican automotive dealership group: new and pre-owned vehicle inventory by brand and body type, quote and financing tools, test-drive and service appointment booking, promotions, and a dealership locator, managed through a CMS.",
-    tags: ["Automotive", "Responsive", "Inventory", "Booking Forms", "CMS"],
   },
   {
     year: "2022",
@@ -85,7 +64,49 @@ export const PROJECTS = [
     url: "https://www.nissanlazarocardenas.com.mx/",
     text: "Built a responsive automotive dealership website with full CMS integration and custom inventory management functionality.",
     tags: ["UIKit", "Responsive", "CMS", "Inventory"],
-  }
+  },
+  {
+    year: "2021",
+    title: "Shaadi By Marriott Bonvoy",
+    url: "https://www.marriottindiaweddings.com/",
+    text: "Developed a luxury wedding platform for Marriott with a full reservation and booking engine, responsive design, and CMS.",
+    tags: ["UIKit", "Booking Engine", "CMS", "Responsive"],
+  },
+  {
+    year: "",
+    title: "Destination Weddings",
+    url: "https://www.destinationweddings.com/",
+    text: "Responsive website for a destination wedding planning service: resort and destination browsing, planning guides, real wedding galleries, exclusive offers, a guest wedding finder, and a free quote request form.",
+    tags: ["Wedding Planning", "Responsive", "Lead Forms", "CMS"],
+  },
+  {
+    year: "",
+    title: "TiEcon",
+    url: "https://www.tiecon.org/",
+    text: "Website handled end to end, built with UIKit and a CMS, fully responsive.",
+    tags: ["UIKit", "Responsive", "CMS", "Full Project"],
+  },
+  {
+    year: "",
+    title: "1440",
+    url: "https://www.1440.org/",
+    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
+    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
+  },
+  {
+    year: "",
+    title: "Velas Resort",
+    url: "https://www.velasresorts.com.mx/",
+    text: "Responsive resort website with a booking engine, managed through a CMS.",
+    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
+  },
+  {
+    year: "",
+    title: "Lonnie's Reno Club",
+    url: "https://www.lonniesrenoclub.com/",
+    text: "Responsive website with a booking engine, managed through a CMS.",
+    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
+  },
 ];
 
 export const EXPERIENCE = [
@@ -180,21 +201,52 @@ export const EDUCATION = [
 export const CLIENT_SITES = [
   { name: "Mariner Finance", url: "https://www.marinerfinance.com/", sector: "Finance" },
   { name: "One Nevada Credit Union", url: "https://www.onenevada.org/", sector: "Finance" },
-  { name: "Mid Minnesota Federal Credit Union", url: "https://www.mmfcu.org/", sector: "Finance" },
   { name: "The Hollywood Roosevelt", url: "https://www.thehollywoodroosevelt.com/", sector: "Hospitality" },
   { name: "The Wauwinet", url: "https://www.wauwinet.com/", sector: "Hospitality" },
   { name: "YMCA of the Rockies", url: "https://www.ymcarockies.org/", sector: "Hospitality" },
   { name: "Kaana Belize", url: "https://www.kaanabelize.com/", sector: "Hospitality" },
   { name: "Itz'ana Belize", url: "https://www.itzanabelize.com/", sector: "Hospitality" },
   { name: "The Grande Colonial", url: "https://www.thegrandecolonial.com/", sector: "Hospitality" },
-  { name: "The POD Hotel", url: "https://www.thepodhotel.com/", sector: "Hospitality" },
   { name: "Hotel Andaluz", url: "https://www.hotelandaluz.com/", sector: "Hospitality" },
   { name: "Great Escapes RV Resorts", url: "https://www.greatescapesrvresorts.com/", sector: "Hospitality" },
   { name: "Honda Tollocan", url: "https://hondatollocan.mx/", sector: "Automotive" },
   { name: "Mitsubishi Coapa", url: "https://www.mitsubishi-coapa.mx/", sector: "Automotive" },
-  { name: "Infiniti Cancun", url: "https://www.infiniticancun.mx/", sector: "Automotive" },
   { name: "BYD Vallejo", url: "https://www.bydvallejo.com.mx/", sector: "Automotive" },
-  { name: "GAC Ismo Motors", url: "https://www.gacismomotors.com/", sector: "Automotive" },
   { name: "The Ferguson Clinic", url: "https://www.thefergusonclinic.com/", sector: "Healthcare" },
   { name: "Aramark", url: "https://www.aramark.com/", sector: "Enterprise" },
+];
+
+// Certificates live in public/certificates. Paths are relative to the site root.
+export const AWARDS = [
+  {
+    title: "Star of the Month",
+    issuer: "Milestone Inc.",
+    date: "Oct 2023",
+    by: "Vijay Rane, Global HR Head",
+    text: "For an exceptional level of commitment in achieving organization goals and delivering commendable performance.",
+    img: "certificates/star-of-the-month-oct-2023.jpg",
+  },
+  {
+    title: "Team of the Month",
+    issuer: "Milestone Inc.",
+    date: "",
+    by: "Vijay Rane, Global HR Head",
+    text: "In recognition of exceptional commitment towards achieving organizational goals and delivering commendable performance.",
+    img: "certificates/team-of-the-month.jpg",
+  },
+];
+
+export const TRAINING = [
+  {
+    title: "SEO Training 2026, Level 1",
+    issuer: "Milestone Inc.",
+    date: "21 May 2026",
+    file: "certificates/seo-training-2026-level-1.pdf",
+  },
+  {
+    title: "AI Skill Certification, Level 1",
+    issuer: "Milestone Inc.",
+    date: "19 Jun 2025",
+    file: "certificates/ai-skill-certification-level-1.pdf",
+  },
 ];
