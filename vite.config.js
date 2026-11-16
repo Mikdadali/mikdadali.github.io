@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+// Repo name is "mikdadali.github.io" (a user site), so it is served from the root.
 export default defineConfig({
   plugins: [react()],
-})
+  base: "/",
+});
