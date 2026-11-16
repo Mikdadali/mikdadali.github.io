@@ -24,6 +24,20 @@ export const SKILLS = {
 
 export const PROJECTS = [
   {
+    year: "",
+    title: "Air Academy Credit Union",
+    url: "https://www.aacu.com/",
+    text: "Responsive, accessible website for a Colorado credit union: personal and business banking, loans, rates, event registration, and an online banking login, all managed through a CMS.",
+    tags: ["Banking", "Responsive", "CMS", "ADA"],
+  },
+  {
+    year: "",
+    title: "StrideCare",
+    url: "https://www.stridecare.com/",
+    text: "Healthcare website for a vascular and podiatry practice: provider and location finders, condition and symptom guides, consultation booking, and patient resources.",
+    tags: ["Healthcare", "Responsive", "Booking Form", "ADA"],
+  },
+  {
     year: "2023",
     title: "Old Point Bank",
     text: "Full project handling from start to end. Built a fully responsive banking website using UIKit and CMS with a focus on performance and accessibility.",
@@ -77,6 +91,13 @@ export const TESTIMONIAL = {
   quote:
     "Have been very impressed by Mikdadali's quality of work, and the quick timeframe that he has been able to complete it in.",
   who: "Milestone Inc.",
+};
+
+// Put your PDF in the "public" folder with exactly this file name.
+export const RESUME = {
+  file: "Mikdadali-Momin-Resume.pdf",
+  summary:
+    "10+ years in React.js, WordPress, ADA/WCAG accessibility, AMP, and PWA. Leading a team of five at Milestone Inc.",
 };
 
 export const PROJECT_TYPES = ["New website", "Accessibility audit", "AMP / PWA", "Something else"];

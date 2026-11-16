@@ -105,7 +105,15 @@ button, input, textarea { font: inherit; color: inherit; }
 .project-title { font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 3.6vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.1; transition: transform 0.35s var(--ease), color 0.3s; }
 .project-head:hover .project-title { transform: translateX(10px); color: var(--sea); }
 .project.open .project-title { color: var(--deep); }
-.plus { font-size: 2rem; line-height: 1; width: 2.6rem; height: 2.6rem; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); }
+.plus { width: 2.6rem; height: 2.6rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--line); flex: none; transition: background 0.3s, border-color 0.3s; }
+.plus svg { display: block; }
+.visit { display: inline-block; margin-bottom: 1.25rem; font-weight: 600; color: var(--sea); text-underline-offset: 4px; }
+.visit:hover { color: var(--deep); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.resume { padding: clamp(3rem, 7vw, 5rem) 0; }
+.resume-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding: clamp(2rem, 5vw, 3.5rem); background: var(--fog); border-radius: 28px; }
+.resume-text h2 { margin-bottom: 1rem; font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.btn-xl { padding: 1.1rem 2.2rem; font-size: 1.1rem; }
 .project.open .plus { background: var(--lamp); border-color: var(--lamp); }
 .project-body { overflow: hidden; }
 .project-inner { padding: 0 0 2rem 6.5rem; max-width: 60rem; }

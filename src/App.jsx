@@ -3,7 +3,7 @@ import {
   motion, AnimatePresence, useScroll, useSpring, useTransform,
   useInView, useReducedMotion, animate,
 } from "framer-motion";
-import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL } from "./data.js";
+import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME } from "./data.js";
 import { SOCIALS } from "./config.js";
 import ContactForm from "./ContactForm.jsx";
 
@@ -12,6 +12,7 @@ const NAV = [
   ["skills", "Skills"],
   ["work", "Work"],
   ["experience", "Experience"],
+  ["resume", "Resume"],
   ["contact", "Contact"],
 ];
 
@@ -230,7 +231,11 @@ function Projects() {
                 <button className="project-head" aria-expanded={isOpen} aria-controls={`proj-${i}`} onClick={() => setOpen(isOpen ? -1 : i)}>
                   <span className="project-year">{p.year || "—"}</span>
                   <span className="project-title">{p.title}</span>
-                  <motion.span className="plus" animate={{ rotate: isOpen ? 45 : 0 }} aria-hidden="true">+</motion.span>
+                  <span className="plus" aria-hidden="true">
+                    <motion.svg viewBox="0 0 24 24" width="20" height="20" animate={{ rotate: isOpen ? 45 : 0 }} transition={{ duration: 0.3 }}>
+                      <path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </motion.svg>
+                  </span>
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (
@@ -238,6 +243,12 @@ function Projects() {
                       animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.45, ease: [0.2, 0.8, 0.2, 1] }}>
                       <div className="project-inner">
                         <p>{p.text}</p>
+                        {p.url && (
+                          <a className="visit" href={p.url} target="_blank" rel="noreferrer">
+                            Visit {new URL(p.url).hostname.replace("www.", "")}
+                            <span className="sr-only"> (opens in a new tab)</span>
+                          </a>
+                        )}
                         <ul className="tags">
                           {p.tags.map((t, k) => (
                             <motion.li key={t} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15 + k * 0.05 }}>{t}</motion.li>
@@ -287,6 +298,29 @@ function Experience() {
   );
 }
 
+/* ---------- Resume ---------- */
+function Resume() {
+  const href = `${import.meta.env.BASE_URL}${RESUME.file}`;
+  return (
+    <section id="resume" className="section resume">
+      <div className="wrap resume-card">
+        <Reveal className="resume-text">
+          <h2>Take my resume with you</h2>
+          <p className="lead">{RESUME.summary}</p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <motion.a className="btn btn-lamp btn-xl" href={href} download whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M12 3v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Download resume (PDF)
+          </motion.a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Contact ---------- */
 function Contact() {
   return (
@@ -318,10 +352,11 @@ export default function App() {
         <Skills />
         <Projects />
         <Experience />
+        <Resume />
         <Contact />
       </main>
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Mikdadali Momin</p>
+        <p>© {new Date().getFullYear()} Mikdadali Momin. Designed and built with React.</p>
       </footer>
     </>
   );
