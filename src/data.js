@@ -31,6 +31,20 @@ export const PROJECTS = [
     tags: ["Banking", "Responsive", "CMS", "ADA"],
   },
   {
+    year: "2026",
+    title: "Velas Resort",
+    url: "https://www.velasresorts.com.mx/",
+    text: "Responsive resort website with a booking engine, managed through a CMS.",
+    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
+  },
+    {
+    year: "2026",
+    title: "Window Nation",
+    url: "https://www.windownation.com/",
+    text: "Responsive home improvement website for a replacement windows and doors company: product pages, free estimate and consultation forms, financing and offers, a service-area locator, and a knowledge center, managed through a CMS.",
+    tags: ["Home Services", "Responsive", "Lead Forms", "CMS"],
+  },
+  {
     year: "2025",
     title: "StrideCare",
     url: "https://www.stridecare.com/",
@@ -38,7 +52,14 @@ export const PROJECTS = [
     tags: ["Healthcare", "Responsive", "Booking Form", "ADA"],
   },
   {
-    year: "2023",
+    year: "2024",
+    title: "1440",
+    url: "https://www.1440.org/",
+    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
+    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
+  },
+  {
+    year: "2024",
     title: "Old Point Bank",
     text: "Full project handling from start to end. Built a fully responsive banking website using UIKit and CMS with a focus on performance and accessibility.",
     tags: ["UIKit", "Responsive", "CMS", "Full Project"],
@@ -54,35 +75,7 @@ export const PROJECTS = [
     title: "Shaadi By Marriott Bonvoy",
     text: "Developed a luxury wedding platform for Marriott with a full reservation and booking engine, responsive design, and CMS.",
     tags: ["UIKit", "Booking Engine", "CMS", "Responsive"],
-  },
-  {
-    year: "",
-    title: "TiEcon",
-    url: "https://www.tiecon.org/",
-    text: "Website handled end to end, built with UIKit and a CMS, fully responsive.",
-    tags: ["UIKit", "Responsive", "CMS", "Full Project"],
-  },
-  {
-    year: "",
-    title: "1440",
-    url: "https://www.1440.org/",
-    text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
-    tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
-  },
-  {
-    year: "",
-    title: "Velas Resort",
-    url: "https://www.velasresorts.com.mx/",
-    text: "Responsive resort website with a booking engine, managed through a CMS.",
-    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
-  },
-  {
-    year: "",
-    title: "Lonnie's Reno Club",
-    url: "https://www.lonniesrenoclub.com/",
-    text: "Responsive website with a booking engine, managed through a CMS.",
-    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
-  },
+  }
 ];
 
 export const EXPERIENCE = [
@@ -189,6 +182,5 @@ export const CLIENT_SITES = [
   { name: "Mitsubishi Coapa", url: "https://www.mitsubishi-coapa.mx/", sector: "Automotive" },
   { name: "BYD Vallejo", url: "https://www.bydvallejo.com.mx/", sector: "Automotive" },
   { name: "The Ferguson Clinic", url: "https://www.thefergusonclinic.com/", sector: "Healthcare" },
-  { name: "Window Nation", url: "https://www.windownation.com/", sector: "Home services" },
   { name: "Aramark", url: "https://www.aramark.com/", sector: "Enterprise" },
 ];
