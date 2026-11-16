@@ -45,6 +45,13 @@ export const PROJECTS = [
     tags: ["Automotive", "Responsive", "Inventory", "Booking Forms", "CMS"],
   },
   {
+    year: "2026",
+    title: "Velas Resort",
+    url: "https://www.velasresorts.com.mx/",
+    text: "Responsive resort website with a booking engine, managed through a CMS.",
+    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
+  },
+  {
     year: "2025",
     title: "StrideCare",
     url: "https://www.stridecare.com/",
@@ -66,47 +73,19 @@ export const PROJECTS = [
     tags: ["UIKit", "Responsive", "CMS", "Inventory"],
   },
   {
-    year: "2021",
-    title: "Shaadi By Marriott Bonvoy",
-    url: "https://www.marriottindiaweddings.com/",
-    text: "Developed a luxury wedding platform for Marriott with a full reservation and booking engine, responsive design, and CMS.",
-    tags: ["UIKit", "Booking Engine", "CMS", "Responsive"],
-  },
-  {
-    year: "",
+    year: "2025",
     title: "Destination Weddings",
     url: "https://www.destinationweddings.com/",
     text: "Responsive website for a destination wedding planning service: resort and destination browsing, planning guides, real wedding galleries, exclusive offers, a guest wedding finder, and a free quote request form.",
     tags: ["Wedding Planning", "Responsive", "Lead Forms", "CMS"],
   },
   {
-    year: "",
-    title: "TiEcon",
-    url: "https://www.tiecon.org/",
-    text: "Website handled end to end, built with UIKit and a CMS, fully responsive.",
-    tags: ["UIKit", "Responsive", "CMS", "Full Project"],
-  },
-  {
-    year: "",
+    year: "2025",
     title: "1440",
     url: "https://www.1440.org/",
     text: "Luxury resort website with a booking engine, eCommerce, blog, and CMS. Full end-to-end frontend development.",
     tags: ["UIKit", "Booking Engine", "eCommerce", "Blog", "CMS"],
-  },
-  {
-    year: "",
-    title: "Velas Resort",
-    url: "https://www.velasresorts.com.mx/",
-    text: "Responsive resort website with a booking engine, managed through a CMS.",
-    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
-  },
-  {
-    year: "",
-    title: "Lonnie's Reno Club",
-    url: "https://www.lonniesrenoclub.com/",
-    text: "Responsive website with a booking engine, managed through a CMS.",
-    tags: ["UIKit", "Responsive", "Booking Engine", "CMS"],
-  },
+  }
 ];
 
 export const EXPERIENCE = [
