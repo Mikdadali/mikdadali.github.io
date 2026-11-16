@@ -3,7 +3,7 @@ import {
   motion, AnimatePresence, useScroll, useSpring, useTransform,
   useInView, useReducedMotion, animate,
 } from "framer-motion";
-import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME, CLIENTS, SERVICES, EDUCATION, CLIENT_SITES } from "./data.js";
+import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME, CLIENTS, SERVICES, EDUCATION, CLIENT_SITES, AWARDS, TRAINING } from "./data.js";
 import { SOCIALS } from "./config.js";
 import ContactForm from "./ContactForm.jsx";
 
@@ -453,6 +453,78 @@ function ClientSites() {
   );
 }
 
+/* ---------- Recognition and training ---------- */
+const asset = (p) => `${import.meta.env.BASE_URL}${p}`;
+
+function Lightbox({ item, onClose }) {
+  useEffect(() => {
+    if (!item) return;
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [item, onClose]);
+  return (
+    <AnimatePresence>
+      {item && (
+        <motion.div className="lightbox" role="dialog" aria-modal="true" aria-label={`${item.title} certificate`}
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
+          <motion.img src={asset(item.img)} alt={`${item.title} certificate awarded to Mikdadali Momin by ${item.issuer}`}
+            initial={{ scale: 0.92, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 260, damping: 26 }}
+            onClick={(e) => e.stopPropagation()} />
+          <button className="lightbox-close" onClick={onClose} autoFocus aria-label="Close certificate">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" /></svg>
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function Recognition() {
+  const [open, setOpen] = useState(null);
+  return (
+    <section id="recognition" className="section">
+      <div className="wrap">
+        <Reveal><h2>Awards and training</h2></Reveal>
+        <div className="awards">
+          {AWARDS.map((a, i) => (
+            <Reveal key={a.title} delay={i * 0.1} className="award">
+              <button className="award-img" onClick={() => setOpen(a)} aria-label={`View ${a.title} certificate`}>
+                <img src={asset(a.img)} alt="" loading="lazy" />
+                <span className="award-zoom" aria-hidden="true">View certificate</span>
+              </button>
+              <div className="award-body">
+                <h3>{a.title}</h3>
+                <p className="job-meta">{a.issuer}{a.date ? ` · ${a.date}` : ""}</p>
+                <p>{a.text}</p>
+                <p className="award-by">Awarded by {a.by}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal><h3 className="sub-h">Training and certifications</h3></Reveal>
+        <ul className="training">
+          {TRAINING.map((t, i) => (
+            <Reveal as="li" key={t.title} delay={i * 0.08} className="train">
+              <span className="train-date">{t.date}</span>
+              <strong>{t.title}</strong>
+              <span className="train-issuer">{t.issuer}</span>
+              <a href={asset(t.file)} target="_blank" rel="noreferrer">
+                View certificate (PDF)
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+      <Lightbox item={open} onClose={() => setOpen(null)} />
+    </section>
+  );
+}
+
 /* ---------- Resume ---------- */
 function Resume() {
   const href = `${import.meta.env.BASE_URL}${RESUME.file}`;
@@ -518,6 +590,7 @@ export default function App() {
         <Projects />
         <ClientSites />
         <Experience />
+        <Recognition />
         <Resume />
         <Contact />
       </main>

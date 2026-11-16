@@ -256,3 +256,30 @@ button, input, textarea { font: inherit; color: inherit; }
 .site-host { color: var(--muted); font-size: 0.92rem; overflow-wrap: anywhere; }
 .site-arrow { position: absolute; right: 1.2rem; top: 1.2rem; color: var(--muted); transition: transform 0.3s var(--ease), color 0.2s; }
 .sites-grid a:hover .site-arrow { transform: translate(3px, -3px); color: var(--sea); }
+
+/* ---------- awards and training ---------- */
+.awards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3.5rem; }
+.award { display: grid; background: var(--fog); border-radius: 24px; overflow: hidden; align-content: start; }
+.award-img { position: relative; display: block; width: 100%; padding: 0; border: 0; background: #fff; cursor: zoom-in; overflow: hidden; }
+.award-img img { display: block; width: 100%; height: auto; transition: transform 0.6s var(--ease); }
+.award-img:hover img { transform: scale(1.04); }
+.award-zoom { position: absolute; left: 50%; bottom: 1rem; transform: translate(-50%, 12px); padding: 0.5rem 1.1rem; border-radius: 999px; background: var(--abyss); color: #fff; font-size: 0.92rem; font-weight: 600; opacity: 0; transition: opacity 0.25s, transform 0.3s var(--ease); }
+.award-img:hover .award-zoom, .award-img:focus-visible .award-zoom { opacity: 1; transform: translate(-50%, 0); }
+.award-body { padding: 1.6rem 1.8rem 1.9rem; }
+.award-body h3 { font-size: 1.7rem; font-weight: 800; }
+.award-body .job-meta { margin-bottom: 0.8rem; }
+.award-body p { color: var(--muted); }
+.award-body .job-meta { color: var(--sea); font-weight: 600; }
+.award-by { margin-top: 0.8rem; font-size: 0.95rem; }
+.sub-h { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.2rem; }
+.training { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.train { display: grid; gap: 0.25rem; padding: 1.5rem; background: #fff; border: 1px solid var(--line); border-radius: 18px; align-content: start; }
+.train-date { color: var(--sea); font-weight: 600; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+.train strong { font-family: var(--display); font-size: 1.25rem; line-height: 1.2; }
+.train-issuer { color: var(--muted); margin-bottom: 0.6rem; }
+.train a { justify-self: start; font-weight: 600; color: var(--deep); text-underline-offset: 4px; }
+.train a:hover { color: var(--sea); }
+.lightbox { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 1.5rem; background: rgba(5, 14, 24, 0.88); backdrop-filter: blur(6px); cursor: zoom-out; }
+.lightbox img { max-width: min(1100px, 100%); max-height: 88vh; border-radius: 12px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); cursor: default; }
+.lightbox-close { position: absolute; top: 1.2rem; right: 1.2rem; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 0; background: var(--lamp); color: var(--abyss); cursor: pointer; }
+@media (max-width: 820px) { .awards { grid-template-columns: 1fr; } }
