@@ -180,3 +180,33 @@ button, input, textarea { font: inherit; color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
+
+/* ---------- client strip ---------- */
+.strip { background: var(--abyss); color: #fff; padding: 1.4rem 0 1.6rem; overflow: hidden; border-top: 1px solid #ffffff14; }
+.strip-label { text-align: center; color: #8fa6b8; font-size: 0.95rem; margin-bottom: 0.9rem; }
+.strip-track { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.strip-track ul { display: flex; width: max-content; gap: 3.5rem; animation: marquee 30s linear infinite; }
+.strip-track:hover ul { animation-play-state: paused; }
+.strip-track li { font-family: var(--display); font-weight: 800; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: -0.02em; white-space: nowrap; color: #c9d8e3; }
+.strip-track li::after { content: ""; display: inline-block; width: 8px; height: 8px; margin-left: 3.5rem; border-radius: 50%; background: var(--lamp); vertical-align: middle; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- services ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.service { padding: 1.8rem; border-radius: 20px; background: var(--fog); transition: transform 0.35s var(--ease), box-shadow 0.35s; }
+.service:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -22px rgba(10, 31, 51, 0.5); }
+.service h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.6rem; }
+.service p { color: var(--muted); }
+.gauge-card { grid-row: span 2; background: var(--deep); color: #fff; border-radius: 20px; padding: 1.8rem; display: grid; place-items: center; }
+.gauge { position: relative; width: min(220px, 100%); text-align: center; }
+.gauge svg { width: 100%; display: block; }
+.gauge-num { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-62%); font-family: var(--display); font-weight: 800; font-size: 4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.gauge p { margin-top: 0.8rem; color: #b8c9d6; font-size: 0.98rem; }
+@media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } .gauge-card { grid-row: auto; grid-column: 1 / -1; } }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* education + back to top */
+.edu { margin-bottom: 2.5rem; padding-left: 2.5rem; }
+.edu h3 { font-size: 1.3rem; font-weight: 800; }
+.edu p { color: var(--muted); }
+.to-top { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 40; width: 3.2rem; height: 3.2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--lamp); color: var(--abyss); box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.5); }

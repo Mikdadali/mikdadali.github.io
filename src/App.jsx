@@ -3,7 +3,7 @@ import {
   motion, AnimatePresence, useScroll, useSpring, useTransform,
   useInView, useReducedMotion, animate,
 } from "framer-motion";
-import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME } from "./data.js";
+import { PROFILE, STATS, SKILLS, PROJECTS, EXPERIENCE, TESTIMONIAL, RESUME, CLIENTS, SERVICES, EDUCATION } from "./data.js";
 import { SOCIALS } from "./config.js";
 import ContactForm from "./ContactForm.jsx";
 
@@ -183,6 +183,83 @@ function About() {
   );
 }
 
+/* ---------- Client strip ---------- */
+function ClientStrip() {
+  const items = [...CLIENTS, ...CLIENTS];
+  return (
+    <section className="strip" aria-label="Brands I have built for">
+      <p className="strip-label">Brands I've built for</p>
+      <div className="strip-track" aria-hidden="true">
+        <ul>
+          {items.map((c, i) => <li key={i}>{c}</li>)}
+        </ul>
+      </div>
+      <ul className="sr-only">{CLIENTS.map((c) => <li key={c}>{c}</li>)}</ul>
+    </section>
+  );
+}
+
+/* ---------- Services + Lighthouse gauge ---------- */
+function Gauge() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const C = 2 * Math.PI * 52;
+  return (
+    <div className="gauge" ref={ref}>
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lighthouse performance score: 98 out of 100">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="#ffffff22" strokeWidth="9" />
+        <motion.circle cx="60" cy="60" r="52" fill="none" stroke="var(--lamp)" strokeWidth="9" strokeLinecap="round"
+          strokeDasharray={C} initial={{ strokeDashoffset: C }} animate={inView ? { strokeDashoffset: C * 0.02 } : {}}
+          transition={{ duration: 1.8, ease: [0.2, 0.8, 0.2, 1] }} transform="rotate(-90 60 60)" />
+      </svg>
+      <span className="gauge-num"><CountUp to={98} suffix="" /></span>
+      <p>Lighthouse performance score</p>
+    </div>
+  );
+}
+
+function Services() {
+  return (
+    <section id="services" className="section">
+      <div className="wrap">
+        <Reveal><h2>What I can build for you</h2></Reveal>
+        <div className="services-grid">
+          <Reveal className="gauge-card"><Gauge /></Reveal>
+          {SERVICES.map((s, i) => (
+            <Reveal key={s.title} delay={(i + 1) * 0.08} className="service">
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Back to top ---------- */
+function BackToTop() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const on = () => setShow(window.scrollY > 700);
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.a href="#top" className="to-top" aria-label="Back to top" initial={{ opacity: 0, y: 20, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.8 }} whileHover={{ y: -4 }}>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M12 19V5m0 0l-6 6m6-6l6 6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </motion.a>
+      )}
+    </AnimatePresence>
+  );
+}
+
 /* ---------- Skills ---------- */
 function Skills() {
   const groups = Object.keys(SKILLS);
@@ -287,6 +364,10 @@ function Experience() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="edu">
+          <h3>Education</h3>
+          <p>{EDUCATION}</p>
+        </Reveal>
         <Reveal className="quote">
           <blockquote>
             <p>“{TESTIMONIAL.quote}”</p>
@@ -348,7 +429,9 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <ClientStrip />
         <About />
+        <Services />
         <Skills />
         <Projects />
         <Experience />
@@ -358,6 +441,7 @@ export default function App() {
       <footer className="footer">
         <p>© {new Date().getFullYear()} Mikdadali Momin. Designed and built with React.</p>
       </footer>
+      <BackToTop />
     </>
   );
 }
