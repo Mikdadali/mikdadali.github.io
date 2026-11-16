@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
   motion, AnimatePresence, useScroll, useSpring, useTransform,
   useInView, useReducedMotion, animate,
@@ -86,13 +86,21 @@ function Hero() {
           {PROFILE.role}
         </motion.p>
         <h1 className="hero-title" aria-label={PROFILE.headline}>
-          <span className="layer dim" aria-hidden="true">{PROFILE.headline}</span>
+          <span className="layer dim" aria-hidden="true">
+            {words.map((w, i) => (
+              <Fragment key={i}>
+                <span className="w">{w}</span>{" "}
+              </Fragment>
+            ))}
+          </span>
           <span className="layer lit" aria-hidden="true">
             {words.map((w, i) => (
-              <motion.span key={i} className="w" initial={{ y: "110%" }} animate={{ y: 0 }}
-                transition={{ delay: 0.35 + i * 0.07, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}>
-                {w}&nbsp;
-              </motion.span>
+              <Fragment key={i}>
+                <motion.span className="w" initial={{ y: "110%" }} animate={{ y: 0 }}
+                  transition={{ delay: 0.35 + i * 0.07, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}>
+                  {w}
+                </motion.span>{" "}
+              </Fragment>
             ))}
           </span>
         </h1>
