@@ -61,8 +61,16 @@ export const PROJECTS = [
   {
     year: "2024",
     title: "Old Point Bank",
+    url: "https://www.oldpointbank.com/",
     text: "Full project handling from start to end. Built a fully responsive banking website using UIKit and CMS with a focus on performance and accessibility.",
     tags: ["UIKit", "Responsive", "CMS", "Full Project"],
+  },
+  {
+    year: "2023",
+    title: "Grupo Autosur",
+    url: "https://www.autosur.mx/",
+    text: "Responsive website for a Mexican automotive dealership group: new and pre-owned vehicle inventory by brand and body type, quote and financing tools, test-drive and service appointment booking, promotions, and a dealership locator, managed through a CMS.",
+    tags: ["Automotive", "Responsive", "Inventory", "Booking Forms", "CMS"],
   },
   {
     year: "2022",
@@ -170,17 +178,21 @@ export const EDUCATION = [
 export const CLIENT_SITES = [
   { name: "Mariner Finance", url: "https://www.marinerfinance.com/", sector: "Finance" },
   { name: "One Nevada Credit Union", url: "https://www.onenevada.org/", sector: "Finance" },
+  { name: "Mid Minnesota Federal Credit Union", url: "https://www.mmfcu.org/", sector: "Finance" },
   { name: "The Hollywood Roosevelt", url: "https://www.thehollywoodroosevelt.com/", sector: "Hospitality" },
   { name: "The Wauwinet", url: "https://www.wauwinet.com/", sector: "Hospitality" },
   { name: "YMCA of the Rockies", url: "https://www.ymcarockies.org/", sector: "Hospitality" },
   { name: "Kaana Belize", url: "https://www.kaanabelize.com/", sector: "Hospitality" },
   { name: "Itz'ana Belize", url: "https://www.itzanabelize.com/", sector: "Hospitality" },
   { name: "The Grande Colonial", url: "https://www.thegrandecolonial.com/", sector: "Hospitality" },
+  { name: "The POD Hotel", url: "https://www.thepodhotel.com/", sector: "Hospitality" },
   { name: "Hotel Andaluz", url: "https://www.hotelandaluz.com/", sector: "Hospitality" },
   { name: "Great Escapes RV Resorts", url: "https://www.greatescapesrvresorts.com/", sector: "Hospitality" },
   { name: "Honda Tollocan", url: "https://hondatollocan.mx/", sector: "Automotive" },
   { name: "Mitsubishi Coapa", url: "https://www.mitsubishi-coapa.mx/", sector: "Automotive" },
+  { name: "Infiniti Cancun", url: "https://www.infiniticancun.mx/", sector: "Automotive" },
   { name: "BYD Vallejo", url: "https://www.bydvallejo.com.mx/", sector: "Automotive" },
+  { name: "GAC Ismo Motors", url: "https://www.gacismomotors.com/", sector: "Automotive" },
   { name: "The Ferguson Clinic", url: "https://www.thefergusonclinic.com/", sector: "Healthcare" },
   { name: "Aramark", url: "https://www.aramark.com/", sector: "Enterprise" },
 ];
