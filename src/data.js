@@ -66,6 +66,13 @@ export const PROJECTS = [
     tags: ["UIKit", "Responsive", "CMS", "Full Project"],
   },
   {
+    year: "2024",
+    title: "Destination Weddings",
+    url: "https://www.destinationweddings.com/",
+    text: "Responsive website for a destination wedding planning service: resort and destination browsing, planning guides, real wedding galleries, exclusive offers, a guest wedding finder, and a free quote request form.",
+    tags: ["Wedding Planning", "Responsive", "Lead Forms", "CMS"],
+  },
+  {
     year: "2023",
     title: "Grupo Autosur",
     url: "https://www.autosur.mx/",
@@ -75,14 +82,9 @@ export const PROJECTS = [
   {
     year: "2022",
     title: "Nissan Mexico Dealership",
+    url: "https://www.nissanlazarocardenas.com.mx/",
     text: "Built a responsive automotive dealership website with full CMS integration and custom inventory management functionality.",
     tags: ["UIKit", "Responsive", "CMS", "Inventory"],
-  },
-  {
-    year: "2021",
-    title: "Shaadi By Marriott Bonvoy",
-    text: "Developed a luxury wedding platform for Marriott with a full reservation and booking engine, responsive design, and CMS.",
-    tags: ["UIKit", "Booking Engine", "CMS", "Responsive"],
   }
 ];
 
