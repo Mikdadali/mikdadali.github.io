@@ -439,7 +439,7 @@ export default function App() {
         <Contact />
       </main>
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Mikdadali Momin. Designed and built with React.</p>
+        <p>© {new Date().getFullYear()} Mikdadali Momin. All rights reserved.</p>
       </footer>
       <BackToTop />
     </>

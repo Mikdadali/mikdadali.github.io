@@ -24,14 +24,14 @@ export const SKILLS = {
 
 export const PROJECTS = [
   {
-    year: "",
+    year: "2026",
     title: "Air Academy Credit Union",
     url: "https://www.aacu.com/",
     text: "Responsive, accessible website for a Colorado credit union: personal and business banking, loans, rates, event registration, and an online banking login, all managed through a CMS.",
     tags: ["Banking", "Responsive", "CMS", "ADA"],
   },
   {
-    year: "",
+    year: "2025",
     title: "StrideCare",
     url: "https://www.stridecare.com/",
     text: "Healthcare website for a vascular and podiatry practice: provider and location finders, condition and symptom guides, consultation booking, and patient resources.",
