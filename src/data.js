@@ -8,7 +8,7 @@ export const PROFILE = {
 
 export const STATS = [
   { value: 10, suffix: "+", label: "Years of experience" },
-  { value: 50, suffix: "+", label: "Projects delivered" },
+  { value: 120, suffix: "+", label: "Projects delivered" },
   { value: 3, suffix: "", label: "Companies" },
   { value: 98, suffix: "", label: "Lighthouse score" },
 ];
